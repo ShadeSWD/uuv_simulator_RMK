@@ -1,15 +1,5 @@
 # `uuv_simulator`: Unmanned Underwater Vehicle (UUV) simulation with Gazebo
 
-[![Build Status](https://travis-ci.org/uuvsimulator/uuv_simulator.svg?branch=dev%2Ftravis_integration)](https://travis-ci.org/uuvsimulator/uuv_simulator)
-[![GitHub issues](https://img.shields.io/github/issues/uuvsimulator/uuv_simulator.svg)](https://github.com/uuvsimulator/uuv_simulator/issues)
-[![License](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://github.com/uuvsimulator/uuv_simulator/blob/master/LICENSE)
-
-> Link to the `uuv_simulator` repository [here](https://github.com/uuvsimulator/uuv_simulator)
-
-> Link to the [documentation page](https://uuvsimulator.github.io/packages/uuv_simulator/intro/) 
-
-> Chat on [Discord](https://discord.gg/zNauF2F)
-
 The **Unmanned Underwater Vehicle Simulator** is a set of packages that include plugins and ROS applications that allow simulation of underwater vehicles in [Gazebo](http://gazebosim.org/). 
 
 If you are using this simulator for your publication, please cite:
@@ -70,27 +60,31 @@ In you are willing to contribute to this package, please check the instructions 
   
 # Installation
 
-This packages has been released for the following ROS distributions
-
-- `kinetic` (See [installation instructions for ROS Kinetic](https://wiki.ros.org/kinetic/Installation/Ubuntu))
-- `lunar` (See [installation instructions for ROS Lunar](https://wiki.ros.org/lunar/Installation/Ubuntu))
-- `melodic` (See [installation instructions for ROS Melodic](https://wiki.ros.org/melodic/Installation/Ubuntu))
-
-Once the `ros-<distro>-desktop-full` package for the desired distribution is installed, the uuv_simulator can be installed as
-
-```bash tab="kinetic"
-sudo apt install ros-kinetic-uuv-simulator
+If you don't have the ROS workspace yet, you should run the following and then clone the uuv_simulator package in the ~/catkin_ws/src folder
 ```
-
-```bash tab="lunar"
-sudo apt install ros-lunar-uuv-simulator
+mkdir -p ~/catkin_ws/src
+cd ~/catkin_ws/src
 ```
-
-```bash tab="melodic"
-sudo apt install ros-melodic-uuv-simulator
+Be sure to install catkin tools package by following the installation instructions on the catkin tools documentation page. After the installation, initialize the catkin workspace
 ```
-
-For instructions on how to install the package from source, check this [instructions page](https://uuvsimulator.github.io/installation/)
+cd ~/catkin_ws
+catkin init
+```
+You can then clone the UUV simulator into your src folder
+```
+cd ~/catkin_ws/src
+git clone https://github.com/uuvsimulator/uuv_simulator.git
+```
+Configure the environment variables by adding the following lines in ~/.bashrc (replace kinetic with the ROS version you are using).
+```
+source /usr/share/gazebo-7/setup.sh
+source /opt/ros/kinetic/setup.bash
+source $HOME/catkin_ws/devel/setup.bash
+```
+After saving these changes, remember to source the .bashrc by either typing
+```
+source ~/.bashrc
+```
 
 # Purpose of the project
 
@@ -103,16 +97,3 @@ Before using it in a safety relevant setting, make sure that the software
 fulfills your requirements and adjust it according to any applicable safety
 standards (e.g. ISO 26262).
 
-# License
-
-UUV Simulator is open-sourced under the Apache-2.0 license. See the
-[LICENSE](https://github.com/uuvsimulator/uuv_simulator/blob/master/LICENSE) file for details.
-
-For a list of other open source components included in UUV Simulator, see the
-file [3rd-party-licenses.txt](https://github.com/uuvsimulator/uuv_simulator/blob/master/3rd-party-licenses.txt).
-
-# Releases
-
-[![ROS Kinetic](https://img.shields.io/badge/ROS%20Distro-kinetic-brightgreen.svg)](http://repositories.ros.org/status_page/ros_kinetic_default.html?q=uuv_simulator)
-[![ROS Lunar](https://img.shields.io/badge/ROS%20Distro-lunar-brightgreen.svg)](http://repositories.ros.org/status_page/ros_lunar_default.html?q=uuv_simulator)
-[![ROS Melodic](https://img.shields.io/badge/ROS%20Distro-melodic-brightgreen.svg)](http://repositories.ros.org/status_page/ros_melodic_default.html?q=uuv_simulator)

@@ -86,6 +86,17 @@ After saving these changes, remember to source the .bashrc by either typing
 source ~/.bashrc
 ```
 
+# Quick start
+
+Start an empty underwater environment using either
+```
+roslaunch uuv_gazebo_worlds empty_underwater_world.launch
+```
+or
+```
+roslaunch uuv_gazebo_worlds ocean_waves.launch
+```
+
 # Purpose of the project
 
 This software is a research prototype, originally developed for the EU ECSEL

@@ -97,6 +97,11 @@ or
 roslaunch uuv_gazebo_worlds ocean_waves.launch
 ```
 
+Add a UUV model
+```
+roslaunch uuv_control_cascaded_pid joy_velocity.launch uuv_name:=rexrov model_name:=rexrov joy_id:=0
+```
+
 # Purpose of the project
 
 This software is a research prototype, originally developed for the EU ECSEL

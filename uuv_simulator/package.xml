@@ -7,10 +7,12 @@
   <author email="luizricardo.douat@de.bosch.com">Luiz Ricardo Douat</author>
   <author email="musa.marcusso@de.bosch.com">Musa Morena Marcusso Manhaes</author>
   <author email="sebastian.scherer2@de.bosch.com">Sebastian Scherer</author>
+  <author email="seawolfy60@gmail.com">Arina Aleevskaia</author>
 
   <maintainer email="luizricardo.douat@de.bosch.com">Luiz Ricardo Douat</maintainer>
   <maintainer email="musa.marcusso@de.bosch.com">Musa Morena Marcusso Manhaes</maintainer>
   <maintainer email="sebastian.scherer2@de.bosch.com">Sebastian Scherer</maintainer>
+  <maintainer email="seawolfy60@gmail.com">Arina Aleevskaia</maintainer>
 
   <license>Apache-2.0</license>
 
@@ -37,6 +39,7 @@
   <exec_depend>uuv_world_plugins</exec_depend>
   <exec_depend>uuv_world_ros_plugins</exec_depend>
   <exec_depend>uuv_world_ros_plugins_msgs</exec_depend>
+  <exec_depend>uuv_publisher</exec_depend>
 
   <export>
     <metapackage/>

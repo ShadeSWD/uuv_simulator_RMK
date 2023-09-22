@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>uuv_publisher</name>
+  <version>0.1.0</version>
+  <description>ROS nodes publish uuv data</description>
+
+  <maintainer email="seawolfy60@gmail.com">Arina Aleevskaia</maintainer>
+
+  <author email="seawolfy60@gmail.com">Arina Aleevskaia</author>
+
+  <license>Apache-2.0</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>nav_msgs</exec_depend>
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>uuv_gazebo_ros_plugins_msgs</exec_depend>
+  <exec_depend>maths</exec_depend>
+</package>

@@ -43,6 +43,4 @@
     <arg name="world_frame" value="$(arg world_frame)"/>
   </include>
 
-  <include file="$(find uuv_publisher)/launch/uuv_data_publisher.launch"/>
-
 </launch>

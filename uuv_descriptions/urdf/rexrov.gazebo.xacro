@@ -33,7 +33,7 @@
             <box>
                 <width>1.905</width>
                 <length>3.598</length>
-                <height>2.673</height>
+                <height>2.049</height>
             </box>
             <center_of_buoyancy>${cob}</center_of_buoyancy>
             <hydrodynamic_model>

@@ -46,6 +46,12 @@
         <origin xyz="0 0 0"/>
         <inertia ixx="2760.99" ixy="29.02" ixz="20.94" iyy="5161.46" iyz="29.39" izz="4332.90"/>
       </inertial>
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="${visual_mesh_file}" scale="1.4 1.27 1.25"/>
+        </geometry>
+      </visual>
       <!-- bottom plate -->
       <collision>
         <origin xyz="0 0 -0.85" rpy="0 0 0"/>

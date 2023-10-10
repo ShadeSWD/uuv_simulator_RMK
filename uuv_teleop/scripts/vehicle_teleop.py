@@ -25,8 +25,8 @@ from sensor_msgs.msg import Joy
 class VehicleTeleop:
     def __init__(self):
         # Load the mapping for each input
-        self._axes = dict(x=4, y=3, z=1,
-                          roll=2, pitch=5, yaw=0,
+        self._axes = dict(x=1, y=0, z=3,
+                          roll=4, pitch=5, yaw=2,
                           xfast=-1, yfast=-1, zfast=-1,
                           rollfast=-1, pitchfast=-1, yawfast=-1)
         # Load the gain for each joystick axis input

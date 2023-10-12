@@ -23,6 +23,16 @@
     <origin xyz="-1.4 0 -0.312" rpy="0 ${0.5*pi} 0"/>
   </xacro:default_dvl_macro>
 
+<!-- Down Sonar -->
+  <xacro:sidescan_sonar namespace="${namespace}" parent_link="${namespace}/base_link" suffix="down">
+  <origin xyz="0 0 -0.92" rpy="0 ${0.5*pi} 0"/>
+  </xacro:sidescan_sonar>
+
+<!-- Up Sonar -->
+  <xacro:sidescan_sonar namespace="${namespace}" parent_link="${namespace}/base_link" suffix="up">
+  <origin xyz="0 0 0.92" rpy="0 ${-0.5*pi} 0"/>
+  </xacro:sidescan_sonar>
+
   <!-- Magnetometer  -->
   <xacro:default_magnetometer namespace="${namespace}" parent_link="${namespace}/base_link"/>
 

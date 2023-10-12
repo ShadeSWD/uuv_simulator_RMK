@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+  <node pkg="uuv_publisher" type="uuv_data_publisher.py" name="uuv_data_publisher"/>
+</launch>

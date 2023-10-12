@@ -2,6 +2,7 @@
 import rospy
 from std_msgs.msg import Float64
 from sensor_msgs.msg import Imu
+from sensor_msgs.msg import LaserScan
 from nav_msgs.msg import Odometry
 from utils import *
 from math import degrees
@@ -22,7 +23,9 @@ def publish_altitude(data):
     pub_altitude.publish(data)
 
 def publish_depth(data):
-    pub_depth.publish(data)
+    middle_range = len(data.ranges) // 2
+    depth = data.ranges[middle_range]
+    pub_depth.publish(depth)
 
 def publish_speed_and_orientation(data):
     xq = data.pose.pose.orientation.x
@@ -51,7 +54,7 @@ def publisher():
 
     while not rospy.is_shutdown():
 #    	rospy.Subscriber("", Float64, publish_altitude)
-#    	rospy.Subscriber("", Float64, publish_depth)
+    	rospy.Subscriber("/rexrov/sss_down", LaserScan, publish_depth)
     	rospy.Subscriber("/rexrov/pose_gt", Odometry, publish_speed_and_orientation)
     	rospy.Subscriber("/rexrov/imu", Imu, publish_accelerate)
         rospy.spin()

@@ -20,7 +20,9 @@ pub_accelerate_side = rospy.Publisher('/rexrov/pose_data/accelerate_side', Float
 pub_accelerate_up = rospy.Publisher('/rexrov/pose_data/accelerate_up', Float64, queue_size=10)
 
 def publish_altitude(data):
-    pub_altitude.publish(data)
+    middle_range = len(data.ranges) // 2
+    depth = data.ranges[middle_range]
+    pub_altitude.publish(depth)
 
 def publish_depth(data):
     middle_range = len(data.ranges) // 2
@@ -53,7 +55,7 @@ def publisher():
     rospy.init_node('rexrov_position_publisher', anonymous=True)
 
     while not rospy.is_shutdown():
-#    	rospy.Subscriber("", Float64, publish_altitude)
+    	rospy.Subscriber("/rexrov/sss_up", LaserScan, publish_altitude)
     	rospy.Subscriber("/rexrov/sss_down", LaserScan, publish_depth)
     	rospy.Subscriber("/rexrov/pose_gt", Odometry, publish_speed_and_orientation)
     	rospy.Subscriber("/rexrov/imu", Imu, publish_accelerate)

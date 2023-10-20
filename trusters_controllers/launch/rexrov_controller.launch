@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+
+  <node name="thrusters_controller" pkg="thrusters_controllers"
+        type="thrusters_controller_node" output="screen">
+    <rosparam command="load" file="$(find thrusters_controllers)/config/rexrov.yaml" />
+  </node>
+
+</launch>

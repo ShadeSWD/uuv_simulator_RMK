@@ -91,7 +91,7 @@ private:
       else
         k_backward_[current_col] = 1.0;
 
-      thrusters_publishers_[current_col] = nh.advertise<std_msgs::Float64>("thrusters/" + thruster.first, 1);
+      thrusters_publishers_[current_col] = nh.advertise<std_msgs::Float64>("/rexrov/thrusters/" + thruster.first + "/thrust", 1);
 
       ROS_INFO("Thruster: %s", thruster.first.c_str());
       ROS_INFO("f: [%.2f %.2f %.2f]", f[0], f[1], f[2]);

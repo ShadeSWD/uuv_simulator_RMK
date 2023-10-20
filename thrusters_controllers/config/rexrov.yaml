@@ -11,49 +11,49 @@ l_z_h: &lzh -0.054
 
 
 thrusters:
-  'rexrov/0':
+  '0':
     f: [ 0.00, -0.50, 0.866]
     r: [ *lxbv, *lylv, *lzv]
     k_forward: 0.4
     k_backward: 0.4
 
-  'rexrov/1':
+  '1':
     f: [ 0.00, 0.50, 0.866]
     r: [ *lxbv, *lyrv, *lzv]
     k_forward: 0.4
     k_backward: 0.4
 
-  'rexrov/2':
+  '2':
     f: [ 0.00, -0.50, 0.866]
     r: [ *lxfv, *lylv, *lzv]
     k_forward: 0.8
     k_backward: 0.8
 
-  'rexrov/3':
+  '3':
     f: [ 0.00, 0.50, 0.866]
     r: [ *lxfv, *lyrv, *lzv]
     k_forward: 0.8
     k_backward: 0.8
 
-  'rexrov/4':
+  '4':
     f: [ 0.707, 0.707, 0.00]
     r: [ *lxbh, *lylh, *lzh]
     k_forward:  1.0
     k_backward:  1.0
 
-  'rexrov/5':
+  '5':
     f: [ 0.707, -0.707, 0.00]
     r: [ *lxbh, *lyrh, *lzh]
     k_forward:  1.0
     k_backward:  1.0
 
-  'rexrov/6':
+  '6':
     f: [ -0.707, 0.707, 0.00]
     r: [ *lxfh, *lylh, *lzh]
     k_forward:  1.0
     k_backward:  1.0
 
-  'rexrov/7':
+  '7':
     f: [ -0.707, -0.707, 0.00]
     r: [ *lxfh, *lyrh, *lzh]
     k_forward:  1.0

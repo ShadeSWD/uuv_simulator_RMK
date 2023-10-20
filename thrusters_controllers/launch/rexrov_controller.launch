@@ -7,8 +7,9 @@
     <remap to="/rexrov/cmd_vel" from="/twist_command"/>
   </node>
 
-  <include file="$(find uuv_teleop)/launch/uuv_keyboard_teleop.launch">
+  <include file="$(find uuv_teleop)/launch/uuv_teleop.launch">
     <arg name="uuv_name" value="rexrov" />
+    <arg name="joy_id" value="0" />
   </include>
 
 </launch>

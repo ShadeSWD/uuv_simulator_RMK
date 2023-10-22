@@ -12,4 +12,6 @@
     <arg name="joy_id" value="0" />
   </include>
 
+  <node name="sim_transform" pkg="topic_tools" type="transform" args="/thrusters/0 /rexrov/thrusters/0/input std_msgs/Float64 m">
+  </node>
 </launch>

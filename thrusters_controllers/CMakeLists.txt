@@ -11,6 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   uuv_gazebo_ros_plugins_msgs
+  topic_tools
 )
 
 ## System dependencies are found with CMake's conventions

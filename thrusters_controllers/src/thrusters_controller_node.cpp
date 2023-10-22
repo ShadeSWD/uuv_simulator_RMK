@@ -7,7 +7,7 @@
 #include <geometry_msgs/Wrench.h>
 #include <geometry_msgs/Twist.h>
 #include <std_msgs/Float64.h>
-#include <uuv_gazebo_ros_plugins_msgs/FloatStamped.h>
+//#include <uuv_gazebo_ros_plugins_msgs/FloatStamped.h>
 
 using Eigen::MatrixXd;
 typedef Eigen::Matrix<double,6,1> RowVector6d;
@@ -38,8 +38,8 @@ public:
     msg.data = 0.0;
     for(auto p : thrusters_publishers_)
       p.publish(msg);
-    for(auto p : sim_thrusters_publishers_)
-      p.publish(msg);
+//    for(auto p : sim_thrusters_publishers_)
+//      p.publish(msg);
   }
 
   void wrenchCallback(const geometry_msgs::WrenchConstPtr& msg)
@@ -51,7 +51,7 @@ public:
     {
       thrust_msg.data = effort[i] > 0 ? k_forward_[i] * effort[i] : k_backward_[i] * effort[i];
       thrusters_publishers_[i].publish(thrust_msg);
-      sim_thrusters_publishers_[i].publish(thrust_msg);
+//      sim_thrusters_publishers_[i].publish(thrust_msg);
     }
   }
 
@@ -64,7 +64,7 @@ public:
     {
       thrust_msg.data = effort[i] > 0 ? k_forward_[i] * effort[i] : k_backward_[i] * effort[i];
       thrusters_publishers_[i].publish(thrust_msg);
-      sim_thrusters_publishers_[i].publish(thrust_msg);
+//      sim_thrusters_publishers_[i].publish(thrust_msg);
     }
   }
 
@@ -73,7 +73,7 @@ private:
   {
     MatrixXd T(6, thrusters.size());
     thrusters_publishers_.resize(static_cast<unsigned>(thrusters.size()));
-    sim_thrusters_publishers_.resize(static_cast<unsigned>(thrusters.size()));
+//    sim_thrusters_publishers_.resize(static_cast<unsigned>(thrusters.size()));
     k_forward_.resize(static_cast<unsigned long>(thrusters.size()));
     k_backward_.resize(static_cast<unsigned long>(thrusters.size()));
 
@@ -98,7 +98,7 @@ private:
         k_backward_[current_col] = 1.0;
 
       thrusters_publishers_[current_col] = nh.advertise<std_msgs::Float64>("thrusters/" + thruster.first, 1);
-      sim_thrusters_publishers_[current_col] = nh.advertise<uuv_gazebo_ros_plugins_msgs::FloatStamped>("/rexrov/thrusters/" + thruster.first + "/input", 1);
+//      sim_thrusters_publishers_[current_col] = nh.advertise<uuv_gazebo_ros_plugins_msgs::FloatStamped>("/rexrov/thrusters/" + thruster.first + "/input", 1);
 
       ROS_INFO("Thruster: %s", thruster.first.c_str());
       ROS_INFO("f: [%.2f %.2f %.2f]", f[0], f[1], f[2]);
@@ -146,7 +146,7 @@ private:
   ros::Subscriber twist_sub_;
 
   std::vector<ros::Publisher> thrusters_publishers_;
-  std::vector<ros::Publisher> sim_thrusters_publishers_;
+//  std::vector<ros::Publisher> sim_thrusters_publishers_;
 
   RowVector6d wrench_;
   MatrixXd tam_;

@@ -7,6 +7,7 @@
 #include <geometry_msgs/Wrench.h>
 #include <geometry_msgs/Twist.h>
 #include <std_msgs/Float64.h>
+#include <uuv_gazebo_ros_plugins_msgs/FloatStamped.h>
 
 using Eigen::MatrixXd;
 typedef Eigen::Matrix<double,6,1> RowVector6d;
@@ -97,7 +98,7 @@ private:
         k_backward_[current_col] = 1.0;
 
       thrusters_publishers_[current_col] = nh.advertise<std_msgs::Float64>("thrusters/" + thruster.first, 1);
-      sim_thrusters_publishers_[current_col] = nh.advertise<std_msgs::Float64>("/rexrov/thrusters/" + thruster.first + "/input", 1);
+      sim_thrusters_publishers_[current_col] = nh.advertise<uuv_gazebo_ros_plugins_msgs::FloatStamped>("/rexrov/thrusters/" + thruster.first + "/input", 1);
 
       ROS_INFO("Thruster: %s", thruster.first.c_str());
       ROS_INFO("f: [%.2f %.2f %.2f]", f[0], f[1], f[2]);

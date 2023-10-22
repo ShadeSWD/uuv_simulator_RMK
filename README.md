@@ -114,6 +114,17 @@ roslaunch uuv_control_cascaded_pid key_board_velocity.launch uuv_name:=rexrov mo
 ```
 In this case model_name refers to the vehicle model, which can be different from the namespace. It is a necessary parameter to load the correct controller and thruster allocation matrix coefficients. The joystick ID is already set zero as default. To find the correct joystick index, you can install and run jstest-gtk.
 
+To use keyboard teleoperation run:
+```
+roslaunch uuv_control_cascaded_pid key_board_velocity.launch uuv_name:=rexrov model_name:=rexrov joy_id:=0
+```
+In this case model_name refers to the vehicle model, which can be different from the namespace. It is a necessary parameter to load the correct controller and thruster allocation matrix coefficients. The joystick ID is already set zero as default. To find the correct joystick index, you can install and run jstest-gtk.
+
+To launch Nonius teleoperation and thresters controller node run:
+```
+roslaunch thrusters_controllers rexrov_controller.launch 
+```
+
 # Purpose of the project
 
 This software is a research prototype, originally developed for the EU ECSEL

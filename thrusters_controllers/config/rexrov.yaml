@@ -14,47 +14,47 @@ thrusters:
   '0':
     f: [ 0.00, -0.50, 0.866]
     r: [ *lxbv, *lylv, *lzv]
-    k_forward: 0.4
-    k_backward: 0.4
+    k_forward: 1.00
+    k_backward: 1.00
 
   '1':
     f: [ 0.00, 0.50, 0.866]
     r: [ *lxbv, *lyrv, *lzv]
-    k_forward: 0.4
-    k_backward: 0.4
+    k_forward: 1.00
+    k_backward: 1.00
 
   '2':
     f: [ 0.00, -0.50, 0.866]
     r: [ *lxfv, *lylv, *lzv]
-    k_forward: 0.8
-    k_backward: 0.8
+    k_forward: 1.00
+    k_backward: 1.00
 
   '3':
     f: [ 0.00, 0.50, 0.866]
     r: [ *lxfv, *lyrv, *lzv]
-    k_forward: 0.8
-    k_backward: 0.8
+    k_forward: 1.00
+    k_backward: 1.00
 
   '4':
     f: [ 0.707, 0.707, 0.00]
     r: [ *lxbh, *lylh, *lzh]
-    k_forward:  1.0
-    k_backward:  1.0
+    k_forward:  1.00
+    k_backward:  1.00
 
   '5':
     f: [ 0.707, -0.707, 0.00]
     r: [ *lxbh, *lyrh, *lzh]
-    k_forward:  1.0
-    k_backward:  1.0
+    k_forward:  1.00
+    k_backward:  1.00
 
   '6':
     f: [ -0.707, 0.707, 0.00]
     r: [ *lxfh, *lylh, *lzh]
-    k_forward:  1.0
-    k_backward:  1.0
+    k_forward:  1.00
+    k_backward:  1.00
 
   '7':
     f: [ -0.707, -0.707, 0.00]
     r: [ *lxfh, *lyrh, *lzh]
-    k_forward:  1.0
-    k_backward:  1.0
+    k_forward:  1.00
+    k_backward:  1.00

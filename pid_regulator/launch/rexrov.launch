@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch> 
+ <node name="uuv_pid_controller" pkg="pid_regulator"
+        type="uuv_pid_controller.py" output="screen">
+    <rosparam command="load" file="$(find pid_regulator)/config/rexrov.yaml" />
+    <remap from="/teleop_command" to="/rexrov/cmd_vel"/>
+    <remap from="/command" to="/wrench_command"/>
+    <remap from="/roll" to="/rexrov/pose_data/roll"/>
+    <remap from="/pitch" to="/rexrov/pose_data/pitch"/>
+    <remap from="/heading" to="/rexrov/pose_data/heading"/>
+    <remap from="/depth" to="/rexrov/pose_data/depth"/>
+  </node>
+</launch>

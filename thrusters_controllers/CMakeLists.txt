@@ -12,6 +12,7 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   uuv_gazebo_ros_plugins_msgs
   topic_tools
+  pid_regulator
 )
 
 ## System dependencies are found with CMake's conventions

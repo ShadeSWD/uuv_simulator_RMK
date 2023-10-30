@@ -13,7 +13,7 @@ def clip_abs(v, v_max):
 
 class PidRegulator:
     def __init__(self):
-        self.is_enabled_ = False
+        self.is_enabled_ = True
         self.twist_ = Twist()
 
         self.roll_pid_ = PID('roll', True)

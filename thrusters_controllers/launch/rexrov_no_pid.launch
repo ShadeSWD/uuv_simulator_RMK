@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<launch>
+
+  <node name="thrusters_controller" pkg="thrusters_controllers"
+        type="thrusters_controller_node" output="screen">
+    <rosparam command="load" file="$(find thrusters_controllers)/config/rexrov.yaml" />
+    <remap to="/rexrov/cmd_vel" from="/twist_command"/>
+  </node>
+
+  <include file="$(find uuv_teleop)/launch/uuv_teleop.launch">
+    <arg name="uuv_name" value="rexrov" />
+    <arg name="joy_id" value="0" />
+  </include>
+
+  <node name="sim_transform0" pkg="topic_tools" type="transform" args="/thrusters/0 /rexrov/thrusters/0/input uuv_gazebo_ros_plugins_msgs/FloatStamped uuv_gazebo_ros_plugins_msgs.msg.FloatStamped(data=m.data*10000) --import uuv_gazebo_ros_plugins_msgs">
+  </node>
+
+  <node name="sim_transform1" pkg="topic_tools" type="transform" args="/thrusters/1 /rexrov/thrusters/1/input uuv_gazebo_ros_plugins_msgs/FloatStamped uuv_gazebo_ros_plugins_msgs.msg.FloatStamped(data=m.data*10000) --import uuv_gazebo_ros_plugins_msgs">
+  </node>
+
+  <node name="sim_transform2" pkg="topic_tools" type="transform" args="/thrusters/2 /rexrov/thrusters/2/input uuv_gazebo_ros_plugins_msgs/FloatStamped uuv_gazebo_ros_plugins_msgs.msg.FloatStamped(data=m.data*10000) --import uuv_gazebo_ros_plugins_msgs">
+  </node>
+
+  <node name="sim_transform3" pkg="topic_tools" type="transform" args="/thrusters/3 /rexrov/thrusters/3/input uuv_gazebo_ros_plugins_msgs/FloatStamped uuv_gazebo_ros_plugins_msgs.msg.FloatStamped(data=m.data*10000) --import uuv_gazebo_ros_plugins_msgs">
+  </node>
+
+  <node name="sim_transform4" pkg="topic_tools" type="transform" args="/thrusters/4 /rexrov/thrusters/4/input uuv_gazebo_ros_plugins_msgs/FloatStamped uuv_gazebo_ros_plugins_msgs.msg.FloatStamped(data=m.data*10000) --import uuv_gazebo_ros_plugins_msgs">
+  </node>
+
+  <node name="sim_transform5" pkg="topic_tools" type="transform" args="/thrusters/5 /rexrov/thrusters/5/input uuv_gazebo_ros_plugins_msgs/FloatStamped uuv_gazebo_ros_plugins_msgs.msg.FloatStamped(data=m.data*10000) --import uuv_gazebo_ros_plugins_msgs">
+  </node>
+
+  <node name="sim_transform6" pkg="topic_tools" type="transform" args="/thrusters/6 /rexrov/thrusters/6/input uuv_gazebo_ros_plugins_msgs/FloatStamped uuv_gazebo_ros_plugins_msgs.msg.FloatStamped(data=m.data*10000) --import uuv_gazebo_ros_plugins_msgs">
+  </node>
+
+  <node name="sim_transform7" pkg="topic_tools" type="transform" args="/thrusters/7 /rexrov/thrusters/7/input uuv_gazebo_ros_plugins_msgs/FloatStamped uuv_gazebo_ros_plugins_msgs.msg.FloatStamped(data=m.data*10000) --import uuv_gazebo_ros_plugins_msgs">
+  </node>
+
+</launch>

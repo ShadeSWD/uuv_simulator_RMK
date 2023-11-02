@@ -25,7 +25,7 @@ class PidRegulator:
         self.heading_pid_ = PID('heading', True)
         self.heading_state_ = 0.0
 
-        self.depth_pid_ = PID('depth', False)
+        self.depth_pid_ = PID('depth', True)
         self.depth_state_ = 0.0
 
         self.max_effort_ = abs(rospy.get_param("~max_effort", 1.0))

@@ -4,7 +4,7 @@ import rospy
 from std_msgs.msg import Float32, Float64, Empty
 from sensor_msgs.msg import Joy
 from geometry_msgs.msg import Twist
-from std_srvs.srv import SetBool
+from std_srvs.srv import SetBool, Trigger
 
 from joy_models import Thrustmaster
 
@@ -44,9 +44,9 @@ class Teleop():
         self.heading_sp_publisher_ = rospy.Publisher('/pid_regulator/heading_pid/setpoint', Float64, queue_size=1)
 
         self.pid_service_ = self.init_service_client('pid_regulator/switch', SetBool)
-        self.depth_pid_service_ = self.init_service_client('pid_regulator/depth_pid/switch', SetBool)
-        self.heading_pid_service_ = self.init_service_client('pid_regulator/heading_pid/switch', SetBool)
-        self.pitch_pid_service_ = self.init_service_client('pid_regulator/pitch_pid/switch', SetBool)
+        self.depth_pid_service_ = self.init_service_client('depth_pid/enable', SetBool)
+        self.heading_pid_service_ = self.init_service_client('heading_pid/enable', SetBool)
+        self.pitch_pid_service_ = self.init_service_client('heading_pid/enable', SetBool)
 
         self.update_timer_ = rospy.Timer(rospy.Duration(0.1), self.update)
 
@@ -157,8 +157,8 @@ class Teleop():
 
         if self.joy_.buttons['TOP_M'].clicked():
             self.hold()
-        # if self.joy_.buttons['LEFT_STICK'].clicked():
-        #     self.switch_free_mode()
+        if self.joy_.buttons['TOP_L'].clicked():
+           self.switch_free_mode()
 
         if self.enabled_:
             self.update_twist()

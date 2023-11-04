@@ -1,8 +1,14 @@
 <?xml version="1.0"?>
 <launch>
-  <node name="joy" pkg="joy" type="joy_node" />
+  <node name="joy" pkg="joy" type="joy_node" >
+    <remap to="/uuv_pid_controller/joy" from="/joy"/>
+  </node>
 
-  <node name="teleop" pkg="teleop_tools" type="rexrov_joy_teleop.py" />
+  <node name="teleop" pkg="teleop_tools" type="rexrov_joy_teleop.py" ns="uuv_pid_controller">
+    <remap to="/teleop_command" from="/uuv_pid_controller/teleop_command"/>
+    <remap from="/uuv_pid_controller/heading" to="/rexrov/pose_data/heading"/>
+    <remap from="/uuv_pid_controller/depth" to="/rexrov/pose_data/depth"/>
+  </node>
 </launch>
 
 

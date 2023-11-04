@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import rospy
-from std_srvs.srv import Trigger, TriggerResponse
+from std_srvs.srv import Trigger, TriggerResponse, SetBool, SetBoolResponse 
 
 from std_msgs.msg import Float64
 from geometry_msgs.msg import Twist, Wrench
@@ -38,13 +38,13 @@ class PidRegulator:
         rospy.Subscriber('teleop_command', Twist, self.vel_callback)
 
         self.wrench_publisher_ = rospy.Publisher('command', Wrench, queue_size=1)
-        self.switch_service_ = rospy.Service('~switch', Trigger, self.handle_switch)
+        self.pid_switch_service_ = rospy.Service('~pid_regulator/switch', SetBool, self.handle_switch)
         self.update_timer_ = rospy.Timer(rospy.Duration(0.1), self.update)
         self.command_ = Twist()
 
     def handle_switch(self, req):
         self.is_enabled_ = not self.is_enabled_
-        resp = TriggerResponse()
+        resp = SetBoolResponse()
         resp.success = True
         resp.message = '%s node %s' % (rospy.get_name(), ('disabled', 'enabled')[self.is_enabled_])
         self.wrench_publisher_.publish(Wrench())

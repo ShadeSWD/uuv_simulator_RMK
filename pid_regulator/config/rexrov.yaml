@@ -23,9 +23,9 @@ heading_pid:
   angular: True
 
 depth_pid:
-  kp: 0.0
-  ki: 0.001
+  kp: 0.5
+  ki: 0.00
   kd: 0.0
-  clamp: 0.4
+  clamp: 0.5
   inverted: False
   angular: False

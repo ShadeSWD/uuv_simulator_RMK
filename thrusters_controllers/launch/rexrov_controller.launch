@@ -6,10 +6,7 @@
     <rosparam command="load" file="$(find thrusters_controllers)/config/rexrov.yaml" />
   </node>
 
-  <include file="$(find uuv_teleop)/launch/uuv_teleop.launch">
-    <arg name="uuv_name" value="rexrov" />
-    <arg name="joy_id" value="0" />
-  </include>
+  <include file="$(find teleop_tools)/launch/rexrov.launch"/>
 
   <include file="$(find pid_regulator)/launch/rexrov.launch"/>
 

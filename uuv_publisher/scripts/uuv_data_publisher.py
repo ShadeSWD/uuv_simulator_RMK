@@ -55,8 +55,8 @@ def publisher():
     rospy.init_node('rexrov_position_publisher', anonymous=True)
 
     while not rospy.is_shutdown():
-    	rospy.Subscriber("/rexrov/sss_up", LaserScan, publish_altitude)
-    	rospy.Subscriber("/rexrov/sss_down", LaserScan, publish_depth)
+    	rospy.Subscriber("/rexrov/sss_up", LaserScan, publish_depth)
+    	rospy.Subscriber("/rexrov/sss_down", LaserScan, publish_altitude)
     	rospy.Subscriber("/rexrov/pose_gt", Odometry, publish_speed_and_orientation)
     	rospy.Subscriber("/rexrov/imu", Imu, publish_accelerate)
         rospy.spin()
